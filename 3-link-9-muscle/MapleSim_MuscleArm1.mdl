@@ -1,0 +1,887 @@
+Library {
+  Name			  "MapleSim_MuscleArm1"
+  Version		  7.5
+  MdlSubVersion		  0
+  Description		  "Created by MapleSim."
+  SavedCharacterEncoding  "UTF-8"
+  LibraryType		  "BlockLibrary"
+  SaveDefaultBlockParams  on
+  ScopeRefreshTime	  0.035000
+  OverrideScopeRefreshTime on
+  DisableAllScopes	  off
+  MaxMDLFileLineLength	  120
+  Created		  "Fri Feb  4 15:00:07 2011"
+  Creator		  "MapleSim"
+  UpdateHistory		  "UpdateHistoryNever"
+  ModifiedByFormat	  "%<Auto>"
+  LastModifiedBy	  "tdewolf"
+  ModifiedDateFormat	  "%<Auto>"
+  LastModifiedDate	  "Fri Feb  4 15:00:55 2011"
+  RTWModifiedTimeStamp	  218732414
+  ModelVersionFormat	  "1.%<AutoIncrement:2>"
+  ConfigurationManager	  "None"
+  SampleTimeColors	  off
+  SampleTimeAnnotations	  off
+  LibraryLinkDisplay	  "none"
+  WideLines		  off
+  ShowLineDimensions	  off
+  ShowPortDataTypes	  off
+  ShowLoopsOnError	  on
+  IgnoreBidirectionalLines off
+  ShowStorageClass	  off
+  ShowTestPointIcons	  on
+  ShowSignalResolutionIcons on
+  ShowViewerIcons	  on
+  SortedOrder		  off
+  ExecutionContextIcon	  off
+  ShowLinearizationAnnotations on
+  BlockNameDataTip	  off
+  BlockParametersDataTip  off
+  BlockDescriptionStringDataTip	off
+  ToolBar		  on
+  StatusBar		  on
+  BrowserShowLibraryLinks off
+  BrowserLookUnderMasks	  off
+  SimulationMode	  "normal"
+  LinearizationMsg	  "none"
+  Profile		  off
+  ParamWorkspaceSource	  "MATLABWorkspace"
+  RecordCoverage	  off
+  CovSaveName		  "covdata"
+  CovMetricSettings	  "dw"
+  CovNameIncrementing	  off
+  CovHtmlReporting	  on
+  CovForceBlockReductionOff on
+  covSaveCumulativeToWorkspaceVar on
+  CovSaveSingleToWorkspaceVar on
+  CovCumulativeReport	  off
+  CovReportOnPause	  on
+  CovModelRefEnable	  "Off"
+  CovExternalEMLEnable	  off
+  ExtModeBatchMode	  off
+  ExtModeEnableFloating	  on
+  ExtModeTrigType	  "manual"
+  ExtModeTrigMode	  "normal"
+  ExtModeTrigPort	  "1"
+  ExtModeTrigElement	  "any"
+  ExtModeTrigDuration	  1000
+  ExtModeTrigDurationFloating "auto"
+  ExtModeTrigHoldOff	  0
+  ExtModeTrigDelay	  0
+  ExtModeTrigDirection	  "rising"
+  ExtModeTrigLevel	  0
+  ExtModeArchiveMode	  "off"
+  ExtModeAutoIncOneShot	  off
+  ExtModeIncDirWhenArm	  off
+  ExtModeAddSuffixToVar	  off
+  ExtModeWriteAllDataToWs off
+  ExtModeArmWhenConnect	  on
+  ExtModeSkipDownloadWhenConnect off
+  ExtModeLogAll		  on
+  ExtModeAutoUpdateStatusClock on
+  ShowModelReferenceBlockVersion off
+  ShowModelReferenceBlockIO off
+  Array {
+    Type		    "Handle"
+    Dimension		    1
+    Simulink.ConfigSet {
+      $ObjectID		      1
+      Version		      "1.10.0"
+      Array {
+	Type			"Handle"
+	Dimension		9
+	Simulink.SolverCC {
+	  $ObjectID		  2
+	  Version		  "1.10.0"
+	  StartTime		  "0.0"
+	  StopTime		  "10.0"
+	  AbsTol		  "auto"
+	  FixedStep		  "auto"
+	  InitialStep		  "auto"
+	  MaxNumMinSteps	  "-1"
+	  MaxOrder		  5
+	  ZcThreshold		  "auto"
+	  ConsecutiveZCsStepRelTol "10*128*eps"
+	  MaxConsecutiveZCs	  "1000"
+	  ExtrapolationOrder	  4
+	  NumberNewtonIterations  1
+	  MaxStep		  "auto"
+	  MinStep		  "auto"
+	  MaxConsecutiveMinStep	  "1"
+	  RelTol		  "1e-3"
+	  SolverMode		  "Auto"
+	  Solver		  "ode45"
+	  SolverName		  "ode45"
+	  SolverJacobianMethodControl "auto"
+	  ShapePreserveControl	  "DisableAll"
+	  ZeroCrossControl	  "UseLocalSettings"
+	  ZeroCrossAlgorithm	  "Nonadaptive"
+	  AlgebraicLoopSolver	  "TrustRegion"
+	  SolverResetMethod	  "Fast"
+	  PositivePriorityOrder	  off
+	  AutoInsertRateTranBlk	  off
+	  SampleTimeConstraint	  "Unconstrained"
+	  InsertRTBMode		  "Whenever possible"
+	}
+	Simulink.DataIOCC {
+	  $ObjectID		  3
+	  Version		  "1.10.0"
+	  Decimation		  "1"
+	  ExternalInput		  "[t, u]"
+	  FinalStateName	  "xFinal"
+	  InitialState		  "xInitial"
+	  LimitDataPoints	  on
+	  MaxDataPoints		  "1000"
+	  LoadExternalInput	  off
+	  LoadInitialState	  off
+	  SaveFinalState	  off
+	  SaveCompleteFinalSimState off
+	  SaveFormat		  "Array"
+	  SaveOutput		  on
+	  SaveState		  off
+	  SignalLogging		  on
+	  DSMLogging		  on
+	  InspectSignalLogs	  off
+	  SaveTime		  on
+	  ReturnWorkspaceOutputs  off
+	  StateSaveName		  "xout"
+	  TimeSaveName		  "tout"
+	  OutputSaveName	  "yout"
+	  SignalLoggingName	  "logsout"
+	  DSMLoggingName	  "dsmout"
+	  OutputOption		  "RefineOutputTimes"
+	  OutputTimes		  "[]"
+	  ReturnWorkspaceOutputsName "out"
+	  Refine		  "1"
+	}
+	Simulink.OptimizationCC {
+	  $ObjectID		  4
+	  Version		  "1.10.0"
+	  Array {
+	    Type		    "Cell"
+	    Dimension		    7
+	    Cell		    "BooleansAsBitfields"
+	    Cell		    "PassReuseOutputArgsAs"
+	    Cell		    "PassReuseOutputArgsThreshold"
+	    Cell		    "ZeroExternalMemoryAtStartup"
+	    Cell		    "ZeroInternalMemoryAtStartup"
+	    Cell		    "OptimizeModelRefInitCode"
+	    Cell		    "NoFixptDivByZeroProtection"
+	    PropName		    "DisabledProps"
+	  }
+	  BlockReduction	  on
+	  BooleanDataType	  on
+	  ConditionallyExecuteInputs on
+	  InlineParams		  off
+	  UseIntDivNetSlope	  off
+	  InlineInvariantSignals  off
+	  OptimizeBlockIOStorage  on
+	  BufferReuse		  on
+	  EnhancedBackFolding	  off
+	  StrengthReduction	  off
+	  EnforceIntegerDowncast  on
+	  ExpressionFolding	  on
+	  BooleansAsBitfields	  off
+	  BitfieldContainerType	  "uint_T"
+	  EnableMemcpy		  on
+	  MemcpyThreshold	  64
+	  PassReuseOutputArgsAs	  "Structure reference"
+	  ExpressionDepthLimit	  2147483647
+	  FoldNonRolledExpr	  on
+	  LocalBlockOutputs	  on
+	  RollThreshold		  5
+	  SystemCodeInlineAuto	  off
+	  StateBitsets		  off
+	  DataBitsets		  off
+	  UseTempVars		  off
+	  ZeroExternalMemoryAtStartup on
+	  ZeroInternalMemoryAtStartup on
+	  InitFltsAndDblsToZero	  off
+	  NoFixptDivByZeroProtection off
+	  EfficientFloat2IntCast  off
+	  EfficientMapNaN2IntZero on
+	  OptimizeModelRefInitCode off
+	  LifeSpan		  "inf"
+	  MaxStackSize		  "Inherit from target"
+	  BufferReusableBoundary  on
+	  SimCompilerOptimization "Off"
+	  AccelVerboseBuild	  off
+	}
+	Simulink.DebuggingCC {
+	  $ObjectID		  5
+	  Version		  "1.10.0"
+	  RTPrefix		  "error"
+	  ConsistencyChecking	  "none"
+	  ArrayBoundsChecking	  "none"
+	  SignalInfNanChecking	  "none"
+	  SignalRangeChecking	  "none"
+	  ReadBeforeWriteMsg	  "UseLocalSettings"
+	  WriteAfterWriteMsg	  "UseLocalSettings"
+	  WriteAfterReadMsg	  "UseLocalSettings"
+	  AlgebraicLoopMsg	  "warning"
+	  ArtificialAlgebraicLoopMsg "warning"
+	  SaveWithDisabledLinksMsg "warning"
+	  SaveWithParameterizedLinksMsg	"warning"
+	  CheckSSInitialOutputMsg on
+	  UnderspecifiedInitializationDetection	"Classic"
+	  MergeDetectMultiDrivingBlocksExec "none"
+	  CheckExecutionContextPreStartOutputMsg off
+	  CheckExecutionContextRuntimeOutputMsg	off
+	  SignalResolutionControl "UseLocalSettings"
+	  BlockPriorityViolationMsg "warning"
+	  MinStepSizeMsg	  "warning"
+	  TimeAdjustmentMsg	  "none"
+	  MaxConsecutiveZCsMsg	  "error"
+	  SolverPrmCheckMsg	  "none"
+	  InheritedTsInSrcMsg	  "warning"
+	  DiscreteInheritContinuousMsg "warning"
+	  MultiTaskDSMMsg	  "error"
+	  MultiTaskCondExecSysMsg "error"
+	  MultiTaskRateTransMsg	  "error"
+	  SingleTaskRateTransMsg  "none"
+	  TasksWithSamePriorityMsg "warning"
+	  SigSpecEnsureSampleTimeMsg "warning"
+	  CheckMatrixSingularityMsg "none"
+	  IntegerOverflowMsg	  "warning"
+	  Int32ToFloatConvMsg	  "warning"
+	  ParameterDowncastMsg	  "error"
+	  ParameterOverflowMsg	  "error"
+	  ParameterUnderflowMsg	  "none"
+	  ParameterPrecisionLossMsg "warning"
+	  ParameterTunabilityLossMsg "warning"
+	  FixptConstUnderflowMsg  "none"
+	  FixptConstOverflowMsg	  "none"
+	  FixptConstPrecisionLossMsg "none"
+	  UnderSpecifiedDataTypeMsg "none"
+	  UnnecessaryDatatypeConvMsg "none"
+	  VectorMatrixConversionMsg "none"
+	  InvalidFcnCallConnMsg	  "error"
+	  FcnCallInpInsideContextMsg "Use local settings"
+	  SignalLabelMismatchMsg  "none"
+	  UnconnectedInputMsg	  "warning"
+	  UnconnectedOutputMsg	  "warning"
+	  UnconnectedLineMsg	  "warning"
+	  SFcnCompatibilityMsg	  "none"
+	  UniqueDataStoreMsg	  "none"
+	  BusObjectLabelMismatch  "warning"
+	  RootOutportRequireBusObject "warning"
+	  AssertControl		  "UseLocalSettings"
+	  EnableOverflowDetection off
+	  ModelReferenceIOMsg	  "none"
+	  ModelReferenceVersionMismatchMessage "none"
+	  ModelReferenceIOMismatchMessage "none"
+	  ModelReferenceCSMismatchMessage "none"
+	  UnknownTsInhSupMsg	  "warning"
+	  ModelReferenceDataLoggingMessage "warning"
+	  ModelReferenceSymbolNameMessage "warning"
+	  ModelReferenceExtraNoncontSigs "error"
+	  StateNameClashWarn	  "warning"
+	  SimStateInterfaceChecksumMismatchMsg "warning"
+	  StrictBusMsg		  "ErrorLevel1"
+	  BusNameAdapt		  "WarnAndRepair"
+	  NonBusSignalsTreatedAsBus "none"
+	  LoggingUnavailableSignals "error"
+	  BlockIODiagnostic	  "none"
+	}
+	Simulink.HardwareCC {
+	  $ObjectID		  6
+	  Version		  "1.10.0"
+	  ProdBitPerChar	  8
+	  ProdBitPerShort	  16
+	  ProdBitPerInt		  32
+	  ProdBitPerLong	  32
+	  ProdIntDivRoundTo	  "Undefined"
+	  ProdEndianess		  "Unspecified"
+	  ProdWordSize		  32
+	  ProdShiftRightIntArith  on
+	  ProdHWDeviceType	  "32-bit Generic"
+	  TargetBitPerChar	  8
+	  TargetBitPerShort	  16
+	  TargetBitPerInt	  32
+	  TargetBitPerLong	  32
+	  TargetShiftRightIntArith on
+	  TargetIntDivRoundTo	  "Undefined"
+	  TargetEndianess	  "Unspecified"
+	  TargetWordSize	  32
+	  TargetTypeEmulationWarnSuppressLevel 0
+	  TargetPreprocMaxBitsSint 32
+	  TargetPreprocMaxBitsUint 32
+	  TargetHWDeviceType	  "Specified"
+	  TargetUnknown		  off
+	  ProdEqTarget		  on
+	}
+	Simulink.ModelReferenceCC {
+	  $ObjectID		  7
+	  Version		  "1.10.0"
+	  UpdateModelReferenceTargets "IfOutOfDateOrStructuralChange"
+	  CheckModelReferenceTargetMessage "error"
+	  EnableParallelModelReferenceBuilds off
+	  ParallelModelReferenceMATLABWorkerInit "None"
+	  ModelReferenceNumInstancesAllowed "Multi"
+	  PropagateVarSize	  "Infer from blocks in model"
+	  ModelReferencePassRootInputsByReference on
+	  ModelReferenceMinAlgLoopOccurrences off
+	  PropagateSignalLabelsOutOfModel off
+	  SupportModelReferenceSimTargetCustomCode off
+	}
+	Simulink.SFSimCC {
+	  $ObjectID		  8
+	  Version		  "1.10.0"
+	  SFSimEnableDebug	  on
+	  SFSimOverflowDetection  on
+	  SFSimEcho		  on
+	  SimBlas		  on
+	  SimCtrlC		  on
+	  SimExtrinsic		  on
+	  SimIntegrity		  on
+	  SimUseLocalCustomCode	  off
+	  SimBuildMode		  "sf_incremental_build"
+	}
+	Simulink.RTWCC {
+	  $BackupClass		  "Simulink.RTWCC"
+	  $ObjectID		  9
+	  Version		  "1.10.0"
+	  Array {
+	    Type		    "Cell"
+	    Dimension		    6
+	    Cell		    "IncludeHyperlinkInReport"
+	    Cell		    "GenerateTraceInfo"
+	    Cell		    "GenerateTraceReport"
+	    Cell		    "GenerateTraceReportSl"
+	    Cell		    "GenerateTraceReportSf"
+	    Cell		    "GenerateTraceReportEml"
+	    PropName		    "DisabledProps"
+	  }
+	  SystemTargetFile	  "grt.tlc"
+	  GenCodeOnly		  off
+	  MakeCommand		  "make_rtw"
+	  GenerateMakefile	  on
+	  TemplateMakefile	  "grt_default_tmf"
+	  GenerateReport	  off
+	  SaveLog		  off
+	  RTWVerbose		  on
+	  RetainRTWFile		  off
+	  ProfileTLC		  off
+	  TLCDebug		  off
+	  TLCCoverage		  off
+	  TLCAssert		  off
+	  ProcessScriptMode	  "Default"
+	  ConfigurationMode	  "Optimized"
+	  ConfigAtBuild		  off
+	  RTWUseLocalCustomCode	  off
+	  RTWUseSimCustomCode	  off
+	  IncludeHyperlinkInReport off
+	  LaunchReport		  off
+	  TargetLang		  "C"
+	  IncludeBusHierarchyInRTWFileBlockHierarchyMap	off
+	  IncludeERTFirstTime	  off
+	  GenerateTraceInfo	  off
+	  GenerateTraceReport	  off
+	  GenerateTraceReportSl	  off
+	  GenerateTraceReportSf	  off
+	  GenerateTraceReportEml  off
+	  GenerateCodeInfo	  off
+	  RTWCompilerOptimization "Off"
+	  CheckMdlBeforeBuild	  "Off"
+	  CustomRebuildMode	  "OnUpdate"
+	  Array {
+	    Type		    "Handle"
+	    Dimension		    2
+	    Simulink.CodeAppCC {
+	      $ObjectID		      10
+	      Version		      "1.10.0"
+	      Array {
+		Type			"Cell"
+		Dimension		19
+		Cell			"IgnoreCustomStorageClasses"
+		Cell			"IgnoreTestpoints"
+		Cell			"InsertBlockDesc"
+		Cell			"SFDataObjDesc"
+		Cell			"SimulinkDataObjDesc"
+		Cell			"DefineNamingRule"
+		Cell			"SignalNamingRule"
+		Cell			"ParamNamingRule"
+		Cell			"InlinedPrmAccess"
+		Cell			"CustomSymbolStr"
+		Cell			"CustomSymbolStrGlobalVar"
+		Cell			"CustomSymbolStrType"
+		Cell			"CustomSymbolStrField"
+		Cell			"CustomSymbolStrFcn"
+		Cell			"CustomSymbolStrFcnArg"
+		Cell			"CustomSymbolStrBlkIO"
+		Cell			"CustomSymbolStrTmpVar"
+		Cell			"CustomSymbolStrMacro"
+		Cell			"ReqsInCode"
+		PropName		"DisabledProps"
+	      }
+	      ForceParamTrailComments off
+	      GenerateComments	      on
+	      IgnoreCustomStorageClasses on
+	      IgnoreTestpoints	      off
+	      IncHierarchyInIds	      off
+	      MaxIdLength	      31
+	      PreserveName	      off
+	      PreserveNameWithParent  off
+	      ShowEliminatedStatement off
+	      IncAutoGenComments      off
+	      SimulinkDataObjDesc     off
+	      SFDataObjDesc	      off
+	      IncDataTypeInIds	      off
+	      MangleLength	      1
+	      CustomSymbolStrGlobalVar "$R$N$M"
+	      CustomSymbolStrType     "$N$R$M"
+	      CustomSymbolStrField    "$N$M"
+	      CustomSymbolStrFcn      "$R$N$M$F"
+	      CustomSymbolStrFcnArg   "rt$I$N$M"
+	      CustomSymbolStrBlkIO    "rtb_$N$M"
+	      CustomSymbolStrTmpVar   "$N$M"
+	      CustomSymbolStrMacro    "$R$N$M"
+	      DefineNamingRule	      "None"
+	      ParamNamingRule	      "None"
+	      SignalNamingRule	      "None"
+	      InsertBlockDesc	      off
+	      SimulinkBlockComments   on
+	      EnableCustomComments    off
+	      InlinedPrmAccess	      "Literals"
+	      ReqsInCode	      off
+	      UseSimReservedNames     off
+	    }
+	    Simulink.GRTTargetCC {
+	      $BackupClass	      "Simulink.TargetCC"
+	      $ObjectID		      11
+	      Version		      "1.10.0"
+	      Array {
+		Type			"Cell"
+		Dimension		17
+		Cell			"GeneratePreprocessorConditionals"
+		Cell			"IncludeMdlTerminateFcn"
+		Cell			"CombineOutputUpdateFcns"
+		Cell			"SuppressErrorStatus"
+		Cell			"ERTCustomFileBanners"
+		Cell			"GenerateSampleERTMain"
+		Cell			"GenerateTestInterfaces"
+		Cell			"ModelStepFunctionPrototypeControlCompliant"
+		Cell			"CPPClassGenCompliant"
+		Cell			"MultiInstanceERTCode"
+		Cell			"PurelyIntegerCode"
+		Cell			"SupportNonFinite"
+		Cell			"SupportComplex"
+		Cell			"SupportAbsoluteTime"
+		Cell			"SupportContinuousTime"
+		Cell			"SupportNonInlinedSFcns"
+		Cell			"PortableWordSizes"
+		PropName		"DisabledProps"
+	      }
+	      TargetFcnLib	      "ansi_tfl_table_tmw.mat"
+	      TargetLibSuffix	      ""
+	      TargetPreCompLibLocation ""
+	      TargetFunctionLibrary   "ANSI_C"
+	      UtilityFuncGeneration   "Auto"
+	      ERTMultiwordTypeDef     "System defined"
+	      ERTCodeCoverageTool     "None"
+	      ERTMultiwordLength      256
+	      MultiwordLength	      2048
+	      GenerateFullHeader      on
+	      GenerateSampleERTMain   off
+	      GenerateTestInterfaces  off
+	      IsPILTarget	      off
+	      ModelReferenceCompliant on
+	      ParMdlRefBuildCompliant on
+	      CompOptLevelCompliant   on
+	      IncludeMdlTerminateFcn  on
+	      GeneratePreprocessorConditionals "Disable all"
+	      CombineOutputUpdateFcns off
+	      SuppressErrorStatus     off
+	      ERTFirstTimeCompliant   off
+	      IncludeFileDelimiter    "Auto"
+	      ERTCustomFileBanners    off
+	      SupportAbsoluteTime     on
+	      LogVarNameModifier      "rt_"
+	      MatFileLogging	      on
+	      MultiInstanceERTCode    off
+	      SupportNonFinite	      on
+	      SupportComplex	      on
+	      PurelyIntegerCode	      off
+	      SupportContinuousTime   on
+	      SupportNonInlinedSFcns  on
+	      SupportVariableSizeSignals off
+	      EnableShiftOperators    on
+	      ParenthesesLevel	      "Nominal"
+	      PortableWordSizes	      off
+	      ModelStepFunctionPrototypeControlCompliant off
+	      CPPClassGenCompliant    off
+	      AutosarCompliant	      off
+	      UseMalloc		      off
+	      ExtMode		      off
+	      ExtModeStaticAlloc      off
+	      ExtModeTesting	      off
+	      ExtModeStaticAllocSize  1000000
+	      ExtModeTransport	      0
+	      ExtModeMexFile	      "ext_comm"
+	      ExtModeIntrfLevel	      "Level1"
+	      RTWCAPISignals	      off
+	      RTWCAPIParams	      off
+	      RTWCAPIStates	      off
+	      GenerateASAP2	      off
+	    }
+	    PropName		    "Components"
+	  }
+	}
+	hdlcoderui.hdlcc {
+	  $ObjectID		  12
+	  Version		  "1.10.0"
+	  Description		  "HDL Coder custom configuration component"
+	  Name			  "HDL Coder"
+	  Array {
+	    Type		    "Cell"
+	    Dimension		    1
+	    Cell		    ""
+	    PropName		    "HDLConfigFile"
+	  }
+	  HDLCActiveTab		  "0"
+	}
+	PropName		"Components"
+      }
+      Name		      "Configuration"
+      CurrentDlgPage	      "Solver"
+      ConfigPrmDlgPosition    " [ 1480, 225, 2360, 855 ] "
+    }
+    PropName		    "ConfigurationSets"
+  }
+  BlockDefaults {
+    ForegroundColor	    "black"
+    BackgroundColor	    "white"
+    DropShadow		    off
+    NamePlacement	    "normal"
+    FontName		    "Helvetica"
+    FontSize		    10
+    FontWeight		    "normal"
+    FontAngle		    "normal"
+    ShowName		    on
+    BlockRotation	    0
+    BlockMirror		    off
+  }
+  AnnotationDefaults {
+    HorizontalAlignment	    "center"
+    VerticalAlignment	    "middle"
+    ForegroundColor	    "black"
+    BackgroundColor	    "white"
+    DropShadow		    off
+    FontName		    "Helvetica"
+    FontSize		    10
+    FontWeight		    "normal"
+    FontAngle		    "normal"
+    UseDisplayTextAsClickCallback off
+  }
+  LineDefaults {
+    FontName		    "Helvetica"
+    FontSize		    9
+    FontWeight		    "normal"
+    FontAngle		    "normal"
+  }
+  BlockParameterDefaults {
+    Block {
+      BlockType		      Inport
+      Port		      "1"
+      UseBusObject	      off
+      BusObject		      "BusObject"
+      BusOutputAsStruct	      off
+      PortDimensions	      "-1"
+      VarSizeSig	      "Inherit"
+      SampleTime	      "-1"
+      OutMin		      "[]"
+      OutMax		      "[]"
+      DataType		      "auto"
+      OutDataType	      "fixdt(1,16,0)"
+      OutScaling	      "[]"
+      OutDataTypeStr	      "Inherit: auto"
+      LockScale		      off
+      SignalType	      "auto"
+      SamplingMode	      "auto"
+      LatchByDelayingOutsideSignal off
+      LatchInputForFeedbackSignals off
+      Interpolate	      on
+    }
+    Block {
+      BlockType		      Outport
+      Port		      "1"
+      UseBusObject	      off
+      BusObject		      "BusObject"
+      BusOutputAsStruct	      off
+      PortDimensions	      "-1"
+      VarSizeSig	      "Inherit"
+      SampleTime	      "-1"
+      OutMin		      "[]"
+      OutMax		      "[]"
+      DataType		      "auto"
+      OutDataType	      "fixdt(1,16,0)"
+      OutScaling	      "[]"
+      OutDataTypeStr	      "Inherit: auto"
+      LockScale		      off
+      SignalType	      "auto"
+      SamplingMode	      "auto"
+      SourceOfInitialOutputValue "Dialog"
+      OutputWhenDisabled      "held"
+      InitialOutput	      "[]"
+    }
+    Block {
+      BlockType		      "S-Function"
+      FunctionName	      "system"
+      SFunctionModules	      "''"
+      PortCounts	      "[]"
+      SFunctionDeploymentMode off
+    }
+    Block {
+      BlockType		      SubSystem
+      ShowPortLabels	      "FromPortIcon"
+      Permissions	      "ReadWrite"
+      PermitHierarchicalResolution "All"
+      TreatAsAtomicUnit	      off
+      CheckFcnCallInpInsideContextMsg off
+      SystemSampleTime	      "-1"
+      RTWFcnNameOpts	      "Auto"
+      RTWFileNameOpts	      "Auto"
+      RTWMemSecFuncInitTerm   "Inherit from model"
+      RTWMemSecFuncExecute    "Inherit from model"
+      RTWMemSecDataConstants  "Inherit from model"
+      RTWMemSecDataInternal   "Inherit from model"
+      RTWMemSecDataParameters "Inherit from model"
+      SimViewingDevice	      off
+      DataTypeOverride	      "UseLocalSettings"
+      MinMaxOverflowLogging   "UseLocalSettings"
+    }
+  }
+  System {
+    Name		    "MapleSim_MuscleArm1"
+    Location		    [1404, 254, 1766, 618]
+    Open		    on
+    ModelBrowserVisibility  off
+    ModelBrowserWidth	    200
+    ScreenColor		    "white"
+    PaperOrientation	    "landscape"
+    PaperPositionMode	    "auto"
+    PaperType		    "usletter"
+    PaperUnits		    "inches"
+    TiledPaperMargins	    [0.500000, 0.500000, 0.500000, 0.500000]
+    TiledPageScale	    1
+    ShowPageBoundaries	    off
+    ZoomFactor		    "100"
+    ReportName		    "simulink-default.rpt"
+    SIDHighWatermark	    6
+    Block {
+      BlockType		      SubSystem
+      Name		      "MapleSim_MuscleArm1"
+      SID		      1
+      Description	      "Subsystem: MapleSim_MuscleArm1"
+      Ports		      [1, 1]
+      Position		      [90, 85, 240, 275]
+      LibraryVersion	      "1.216"
+      MinAlgLoopOccurrences   off
+      PropExecContextOutsideSubsystem off
+      RTWSystemCode	      "Auto"
+      FunctionWithSeparateData off
+      Opaque		      off
+      RequestExecContextInheritance off
+      MaskHideContents	      off
+      MaskType		      "MuscleArm1"
+      MaskDescription	      "Variable Definition\n\nVariable(s) for Initial Condition Vector:\n     x[ 0] = `Main.Musc"
+      "leArm1.Muscle1::HillMuscle1::D4.x`(t)\n     x[ 1] = `Main.MuscleArm1.Muscle2::HillMuscle1::D4.x`(t)\n     x[ 2] "
+      "= `Main.MuscleArm1.Muscle3::HillMuscle1::D4.x`(t)\n     x[ 3] = `Main.MuscleArm1.Muscle4::HillMuscle1::D4.x`(t)\n"
+      "     x[ 4] = `Main.MuscleArm1.Muscle5::HillMuscle1::D4.x`(t)\n     x[ 5] = `Main.MuscleArm1.Muscle6::HillMuscle1"
+      "::D4.x`(t)\n     x[ 6] = `Main.MuscleArm1.Muscle7::HillMuscle1::D4.x`(t)\n     x[ 7] = `Main.MuscleArm1.Muscle8:"
+      ":HillMuscle1::D4.x`(t)\n     x[ 8] = `Main.MuscleArm1.Muscle9::HillMuscle1::D4.x`(t)\n     x[ 9] = `Main.MuscleA"
+      "rm1.DFPSubsys1inst.s_Muscle1_MLength`(t)\n     x[10] = diff(`Main.MuscleArm1.DFPSubsys1inst.s_Muscle1_MLength`(t"
+      "),t)\n     x[11] = `Main.MuscleArm1.DFPSubsys1inst.s_Muscle2_MLength`(t)\n     x[12] = diff(`Main.MuscleArm1.DFP"
+      "Subsys1inst.s_Muscle2_MLength`(t),t)\n     x[13] = `Main.MuscleArm1.DFPSubsys1inst.s_Muscle3_MLength`(t)\n     x"
+      "[14] = diff(`Main.MuscleArm1.DFPSubsys1inst.s_Muscle3_MLength`(t),t)\n     x[15] = `Main.MuscleArm1.DFPSubsys1in"
+      "st.s_Muscle4_MLength`(t)\n     x[16] = diff(`Main.MuscleArm1.DFPSubsys1inst.s_Muscle4_MLength`(t),t)\n     x[17]"
+      " = `Main.MuscleArm1.DFPSubsys1inst.s_Muscle5_MLength`(t)\n     x[18] = diff(`Main.MuscleArm1.DFPSubsys1inst.s_Mu"
+      "scle5_MLength`(t),t)\n     x[19] = `Main.MuscleArm1.DFPSubsys1inst.s_Muscle6_MLength`(t)\n     x[20] = diff(`Mai"
+      "n.MuscleArm1.DFPSubsys1inst.s_Muscle6_MLength`(t),t)\n     x[21] = `Main.MuscleArm1.DFPSubsys1inst.s_Muscle7_MLe"
+      "ngth`(t)\n     x[22] = diff(`Main.MuscleArm1.DFPSubsys1inst.s_Muscle7_MLength`(t),t)\n     x[23] = `Main.MuscleA"
+      "rm1.DFPSubsys1inst.s_Muscle8_MLength`(t)\n     x[24] = diff(`Main.MuscleArm1.DFPSubsys1inst.s_Muscle8_MLength`(t"
+      "),t)\n     x[25] = `Main.MuscleArm1.DFPSubsys1inst.s_Muscle9_MLength`(t)\n     x[26] = diff(`Main.MuscleArm1.DFP"
+      "Subsys1inst.s_Muscle9_MLength`(t),t)\n     x[27] = `Main.MuscleArm1.DFPSubsys1inst.theta_Muscle1_R4`(t)\n     x["
+      "28] = diff(`Main.MuscleArm1.DFPSubsys1inst.theta_Muscle1_R4`(t),t)\n     x[29] = `Main.MuscleArm1.DFPSubsys1inst"
+      ".theta_Muscle2_R4`(t)\n     x[30] = diff(`Main.MuscleArm1.DFPSubsys1inst.theta_Muscle2_R4`(t),t)\n     x[31] = `"
+      "Main.MuscleArm1.DFPSubsys1inst.theta_Muscle3_R4`(t)\n     x[32] = diff(`Main.MuscleArm1.DFPSubsys1inst.theta_Mus"
+      "cle3_R4`(t),t)\n     x[33] = `Main.MuscleArm1.DFPSubsys1inst.theta_Muscle4_R4`(t)\n     x[34] = diff(`Main.Muscl"
+      "eArm1.DFPSubsys1inst.theta_Muscle4_R4`(t),t)\n     x[35] = `Main.MuscleArm1.DFPSubsys1inst.theta_Muscle5_R4`(t)\n"
+      "     x[36] = diff(`Main.MuscleArm1.DFPSubsys1inst.theta_Muscle5_R4`(t),t)\n     x[37] = `Main.MuscleArm1.DFPSubs"
+      "ys1inst.theta_Muscle6_R4`(t)\n     x[38] = diff(`Main.MuscleArm1.DFPSubsys1inst.theta_Muscle6_R4`(t),t)\n     x["
+      "39] = `Main.MuscleArm1.DFPSubsys1inst.theta_Muscle7_R4`(t)\n     x[40] = diff(`Main.MuscleArm1.DFPSubsys1inst.th"
+      "eta_Muscle7_R4`(t),t)\n     x[41] = `Main.MuscleArm1.DFPSubsys1inst.theta_Muscle8_R4`(t)\n     x[42] = diff(`Mai"
+      "n.MuscleArm1.DFPSubsys1inst.theta_Muscle8_R4`(t),t)\n     x[43] = `Main.MuscleArm1.DFPSubsys1inst.theta_Muscle9_"
+      "R4`(t)\n     x[44] = diff(`Main.MuscleArm1.DFPSubsys1inst.theta_Muscle9_R4`(t),t)\n     x[45] = `Main.MuscleArm1"
+      ".DFPSubsys1inst.theta_R1`(t)\n     x[46] = diff(`Main.MuscleArm1.DFPSubsys1inst.theta_R1`(t),t)\n     x[47] = `M"
+      "ain.MuscleArm1.DFPSubsys1inst.theta_R2`(t)\n     x[48] = diff(`Main.MuscleArm1.DFPSubsys1inst.theta_R2`(t),t)\n "
+      "    x[49] = `Main.MuscleArm1.DFPSubsys1inst.theta_R3`(t)\n     x[50] = diff(`Main.MuscleArm1.DFPSubsys1inst.thet"
+      "a_R3`(t),t)\n\nVariable(s) in output vector:\n     y[ 0] = `Main.MuscleArm1::ElbowAngle`(t)\n     y[ 1] = `Main."
+      "MuscleArm1::ShoulderAngle`(t)\n     y[ 2] = `Main.MuscleArm1::WristAngle`(t)\n\nVariable(s) in input vector:\n  "
+      "   u[ 0] = `Main.MuscleArm1::ma1`(t)\n     u[ 1] = `Main.MuscleArm1::ma2`(t)\n     u[ 2] = `Main.MuscleArm1::ma3"
+      "`(t)\n     u[ 3] = `Main.MuscleArm1::ma4`(t)\n     u[ 4] = `Main.MuscleArm1::ma5`(t)\n     u[ 5] = `Main.MuscleA"
+      "rm1::ma6`(t)\n     u[ 6] = `Main.MuscleArm1::ma7`(t)\n     u[ 7] = `Main.MuscleArm1::ma8`(t)\n     u[ 8] = `Main"
+      ".MuscleArm1::ma9`(t)\n\nVariable(s) in the parameter vector:\n"
+      MaskHelp		      "<!DOCTYPE html PUBLIC \"-//W3C//DTD HTML 4.01 Transitional//EN\" \"http://www.w3.org/TR/1999/RE"
+      "C-html401-19991224/loose.dtd\"><html lang=\"en\"><head> <title>cMuscleArm1 :: MapleSim model</title><!-- /*Style"
+      " taken from http://www.mathworks.com/matlabcentral/fileexchange/\nloadFile.do?objectId=21367&objectType=file*/ -"
+      "->\n<style type=\"text/css\">\nbody {    background-color: white;    margin:10px;}\nh1 {   color: #990000;   fon"
+      "t-size: x-large;}\nh2 {   color: #990000;   font-size: large;   margin-top:0ex;\n    margin-bottom:0ex;   font-w"
+      "eight:bold;}\nh3 {   color:#990000;    margin-top:0ex;    margin-bottom:0ex;\n    font-weight:bold;    font-size"
+      ": medium;}\nh4 {   color:black;    margin-top:0ex;    margin-bottom:0ex;\n     font-weight:bold;   font-size: me"
+      "dium;}\n/* Vertical space in tables other than the header and footer banners */\ntable.body {    margin-top: 2ex"
+      ";    margin-bottom: 2ex;}\n/* Make the text shrink to fit narrow windows, but not stretch too far in wide window"
+      "s. */\np,h1,h2,div.content div {   max-width: 600px;\n   /* Hack for IE6 */\n    width: auto !important; width: "
+      "600px;}\npre.codeinput {   background: #EEEEEE;   padding: 10px;}\n@media print {   pre.codeinput {word-wrap:bre"
+      "ak-word; width:100%;}\n}\nspan.keyword {color: #0000FF}span.comment {color: #228B22}\nspan.string {color: #A020F"
+      "0}span.untermstring {color: #B20000}\nspan.syscmd {color: #B28C00}\npre.error {   color: red;}\np.footer {   tex"
+      "t-align: right;   font-size: xx-small;\n   font-weight: lighter;   font-style: italic;   color: gray;\n}</style>"
+      "<meta name=\"generator\"\n content=\"DocBook XSL Stylesheets V1.52.2\">\n<meta name=\"chunktype\" content=\"refp"
+      "age\">\n<meta http-equiv=\"Content-Script-Type\" content=\"text/javascript\"></head>\n<body><a name=\"top_of_pag"
+      "e\"></a>\n<p style=\"font-size:1px;\"><a name=\"f8-894621\"></a>\n<a name=\"transferfcn\"></a>\n<a class=\"index"
+      "term\" name=\"zmw57dd0e42758\"></a></p>\n<h1 class=\"reftitle\">cMuscleArm1</h1>\n<p>Simulink Block generated by"
+      " MapleSim Connector</p><p><a name=\"f8-894627\"></a></p>\n<h2>Description <span class=\"inlinemediaobject\"></br"
+      "></span></h2></br>\n<p><a class=\"indexterm\" name=\"zmw57dd0e42781\"></a></p>\n<p>The cMuscleArm1 block runs in"
+      " the continuous domain system and is created in the MapleSim modeling environment. The block is converted to sim"
+      "ulink using MapleSim Connector. The block is a 9 input, 3 output system.</p>\n<p><a name=\"f8-894641\"></a></p><"
+      "/br><h3>System Variables</h3></br>\n<p>The following variables are used in the user defined function</p></br>\n "
+      "Output Variable(s)<dl></br><dd>y[ 0] = `Main.MuscleArm1::ElbowAngle`(t)</dd></br><dd>y[ 1] = `Main.MuscleArm1::S"
+      "houlderAngle`(t)</dd></br><dd>y[ 2] = `Main.MuscleArm1::WristAngle`(t)</dd></br></dl></br>\n\n Input Variable(s)"
+      "<dl></br><dd>u[ 0] = `Main.MuscleArm1::ma1`(t)</dd></br><dd>u[ 1] = `Main.MuscleArm1::ma2`(t)</dd></br><dd>u[ 2]"
+      " = `Main.MuscleArm1::ma3`(t)</dd></br><dd>u[ 3] = `Main.MuscleArm1::ma4`(t)</dd></br><dd>u[ 4] = `Main.MuscleArm"
+      "1::ma5`(t)</dd></br><dd>u[ 5] = `Main.MuscleArm1::ma6`(t)</dd></br><dd>u[ 6] = `Main.MuscleArm1::ma7`(t)</dd></b"
+      "r><dd>u[ 7] = `Main.MuscleArm1::ma8`(t)</dd></br><dd>u[ 8] = `Main.MuscleArm1::ma9`(t)</dd></br></dl></br>\n\n S"
+      "tate Variable(s)<dl></br><dd>x[ 0] = `Main.MuscleArm1.Muscle1::HillMuscle1::D4.x`(t)</dd></br><dd>x[ 1] = `Main."
+      "MuscleArm1.Muscle2::HillMuscle1::D4.x`(t)</dd></br><dd>x[ 2] = `Main.MuscleArm1.Muscle3::HillMuscle1::D4.x`(t)</"
+      "dd></br><dd>x[ 3] = `Main.MuscleArm1.Muscle4::HillMuscle1::D4.x`(t)</dd></br><dd>x[ 4] = `Main.MuscleArm1.Muscle"
+      "5::HillMuscle1::D4.x`(t)</dd></br><dd>x[ 5] = `Main.MuscleArm1.Muscle6::HillMuscle1::D4.x`(t)</dd></br><dd>x[ 6]"
+      " = `Main.MuscleArm1.Muscle7::HillMuscle1::D4.x`(t)</dd></br><dd>x[ 7] = `Main.MuscleArm1.Muscle8::HillMuscle1::D"
+      "4.x`(t)</dd></br><dd>x[ 8] = `Main.MuscleArm1.Muscle9::HillMuscle1::D4.x`(t)</dd></br><dd>x[ 9] = `Main.MuscleAr"
+      "m1.DFPSubsys1inst.s_Muscle1_MLength`(t)</dd></br><dd>x[10] = diff(`Main.MuscleArm1.DFPSubsys1inst.s_Muscle1_MLen"
+      "gth`(t),t)</dd></br><dd>x[11] = `Main.MuscleArm1.DFPSubsys1inst.s_Muscle2_MLength`(t)</dd></br><dd>x[12] = diff("
+      "`Main.MuscleArm1.DFPSubsys1inst.s_Muscle2_MLength`(t),t)</dd></br><dd>x[13] = `Main.MuscleArm1.DFPSubsys1inst.s_"
+      "Muscle3_MLength`(t)</dd></br><dd>x[14] = diff(`Main.MuscleArm1.DFPSubsys1inst.s_Muscle3_MLength`(t),t)</dd></br>"
+      "<dd>x[15] = `Main.MuscleArm1.DFPSubsys1inst.s_Muscle4_MLength`(t)</dd></br><dd>x[16] = diff(`Main.MuscleArm1.DFP"
+      "Subsys1inst.s_Muscle4_MLength`(t),t)</dd></br><dd>x[17] = `Main.MuscleArm1.DFPSubsys1inst.s_Muscle5_MLength`(t)<"
+      "/dd></br><dd>x[18] = diff(`Main.MuscleArm1.DFPSubsys1inst.s_Muscle5_MLength`(t),t)</dd></br><dd>x[19] = `Main.Mu"
+      "scleArm1.DFPSubsys1inst.s_Muscle6_MLength`(t)</dd></br><dd>x[20] = diff(`Main.MuscleArm1.DFPSubsys1inst.s_Muscle"
+      "6_MLength`(t),t)</dd></br><dd>x[21] = `Main.MuscleArm1.DFPSubsys1inst.s_Muscle7_MLength`(t)</dd></br><dd>x[22] ="
+      " diff(`Main.MuscleArm1.DFPSubsys1inst.s_Muscle7_MLength`(t),t)</dd></br><dd>x[23] = `Main.MuscleArm1.DFPSubsys1i"
+      "nst.s_Muscle8_MLength`(t)</dd></br><dd>x[24] = diff(`Main.MuscleArm1.DFPSubsys1inst.s_Muscle8_MLength`(t),t)</dd"
+      "></br><dd>x[25] = `Main.MuscleArm1.DFPSubsys1inst.s_Muscle9_MLength`(t)</dd></br><dd>x[26] = diff(`Main.MuscleAr"
+      "m1.DFPSubsys1inst.s_Muscle9_MLength`(t),t)</dd></br><dd>x[27] = `Main.MuscleArm1.DFPSubsys1inst.theta_Muscle1_R4"
+      "`(t)</dd></br><dd>x[28] = diff(`Main.MuscleArm1.DFPSubsys1inst.theta_Muscle1_R4`(t),t)</dd></br><dd>x[29] = `Mai"
+      "n.MuscleArm1.DFPSubsys1inst.theta_Muscle2_R4`(t)</dd></br><dd>x[30] = diff(`Main.MuscleArm1.DFPSubsys1inst.theta"
+      "_Muscle2_R4`(t),t)</dd></br><dd>x[31] = `Main.MuscleArm1.DFPSubsys1inst.theta_Muscle3_R4`(t)</dd></br><dd>x[32] "
+      "= diff(`Main.MuscleArm1.DFPSubsys1inst.theta_Muscle3_R4`(t),t)</dd></br><dd>x[33] = `Main.MuscleArm1.DFPSubsys1i"
+      "nst.theta_Muscle4_R4`(t)</dd></br><dd>x[34] = diff(`Main.MuscleArm1.DFPSubsys1inst.theta_Muscle4_R4`(t),t)</dd><"
+      "/br><dd>x[35] = `Main.MuscleArm1.DFPSubsys1inst.theta_Muscle5_R4`(t)</dd></br><dd>x[36] = diff(`Main.MuscleArm1."
+      "DFPSubsys1inst.theta_Muscle5_R4`(t),t)</dd></br><dd>x[37] = `Main.MuscleArm1.DFPSubsys1inst.theta_Muscle6_R4`(t)"
+      "</dd></br><dd>x[38] = diff(`Main.MuscleArm1.DFPSubsys1inst.theta_Muscle6_R4`(t),t)</dd></br><dd>x[39] = `Main.Mu"
+      "scleArm1.DFPSubsys1inst.theta_Muscle7_R4`(t)</dd></br><dd>x[40] = diff(`Main.MuscleArm1.DFPSubsys1inst.theta_Mus"
+      "cle7_R4`(t),t)</dd></br><dd>x[41] = `Main.MuscleArm1.DFPSubsys1inst.theta_Muscle8_R4`(t)</dd></br><dd>x[42] = di"
+      "ff(`Main.MuscleArm1.DFPSubsys1inst.theta_Muscle8_R4`(t),t)</dd></br><dd>x[43] = `Main.MuscleArm1.DFPSubsys1inst."
+      "theta_Muscle9_R4`(t)</dd></br><dd>x[44] = diff(`Main.MuscleArm1.DFPSubsys1inst.theta_Muscle9_R4`(t),t)</dd></br>"
+      "<dd>x[45] = `Main.MuscleArm1.DFPSubsys1inst.theta_R1`(t)</dd></br><dd>x[46] = diff(`Main.MuscleArm1.DFPSubsys1in"
+      "st.theta_R1`(t),t)</dd></br><dd>x[47] = `Main.MuscleArm1.DFPSubsys1inst.theta_R2`(t)</dd></br><dd>x[48] = diff(`"
+      "Main.MuscleArm1.DFPSubsys1inst.theta_R2`(t),t)</dd></br><dd>x[49] = `Main.MuscleArm1.DFPSubsys1inst.theta_R3`(t)"
+      "</dd></br><dd>x[50] = diff(`Main.MuscleArm1.DFPSubsys1inst.theta_R3`(t),t)</dd></br></dl></br>\n\n Parameter(s)<"
+      "dl></br></dl></br>\n\n</p></br>\n<p><a name=\"f8-894651\"></a></p><h2>Data Type Support</h2></br><p>The cMuscleA"
+      "rm1 block accepts inputs and outputs signals of type <tt>double</tt>.</p>\n<a name=\"f8-894653\"></a><h2>Paramet"
+      "ers and Dialog Box</h2></br>\n<dl><dt><a name=\"zmw57dd0e42948\"></a><b><span class=\"term\">Initial Condition</"
+      "span>s</b></dt><dd></br>\n<p>The row vector of initial conditions. A vector can be specified to initial the stat"
+      "e variables of system.\n The default is <tt>[1., 0., 0., 0., 0., 0]</tt>.</p></dd></br></dl></br></br>\n<dt><a n"
+      "ame=\"zmw57dd0e42968\"></a></dt><h2>Characteristics</h2><table cellspacing=\"0\" class=\"body\" cellpadding=\"4\""
+      " border=\"2\"><colgroup><col width=\"41%\"><col width=\"59%\"></colgroup><tbody>\n<tr valign=\"top\"><td bgcolor"
+      "=\"#F2F2F2\"><p>Direct Feedthrough</p></td><td bgcolor=\"#F2F2F2\"><p>Yes, only if the block has no state variab"
+      "le.</p></td></tr></br>\n<tr valign=\"top\"><td bgcolor=\"#F2F2F2\"><p>Sample Time</p></td><td bgcolor=\"#F2F2F2\""
+      "><p> Continuous</p></td></tr></br>\n<tr valign=\"top\"><td bgcolor=\"#F2F2F2\"><p>Scalar Expansion</p></td><td b"
+      "gcolor=\"#F2F2F2\"><p>No</p></td></tr></br>\n<tr valign=\"top\"><td bgcolor=\"#F2F2F2\"><p>State</p></td><td bgc"
+      "olor=\"#F2F2F2\"><p>Yes</p></td></tr></br>\n<tr valign=\"top\"><td bgcolor=\"#F2F2F2\"><p>Dimensionalized</p></t"
+      "d><td bgcolor=\"#F2F2F2\"><p>Yes. See the description in previous section.</p></td></tr></br>\n<tr valign=\"top\""
+      "><td bgcolor=\"#F2F2F2\"><p>Zero Crossing</p></td><td bgcolor=\"#F2F2F2\"><p>No</p></td></tr></br>\n</tbody></ta"
+      "ble><p></p></br></body></html>"
+      MaskPromptString	      "Initial Conditions:"
+      MaskStyleString	      "edit"
+      MaskTunableValueString  "on"
+      MaskEnableString	      "on"
+      MaskVisibilityString    "on"
+      MaskToolTipString	      "on"
+      MaskVariables	      "ic=@1;"
+      MaskDisplay	      "patch([4, 41, 43, 43, 41, 4, 2, 2, 4], [2, 2, 4, 41, 43, 43, 41, 4, 2], [1, 0.5, 0]);patch([7"
+      ", 38, 40, 40, 38, 7, 5, 5, 7], [5, 5, 7, 38, 40, 40, 38, 7, 5], [0.96, 0.89, 0.73]);patch([15, 9, 5, 9],[16, 11,"
+      " 16, 21],[.75, 0, 0]);patch([38, 30, 23, 30],[18, 10, 18, 26],[.75, 0, 0]);patch([23, 19, 16, 19],[14, 10, 14, 1"
+      "8],[.75, 0, 0]);patch([20, 16, 13, 16],[20, 16, 20, 24],[0, 0.34, 0.45]);patch([26, 22, 19, 22],[24, 20, 24, 28]"
+      ",[0.75, 0, 0]);patch([17, 12, 8, 12], [28, 23, 28, 33],[.75, 0, 0]);patch([24, 22, 20, 22],[32, 30, 32, 34],[0, "
+      "0.34, 0.45]);color('blue');text(55,30,'Generated by');text(55,15,'MapleSim');"
+      MaskIconFrame	      on
+      MaskIconOpaque	      off
+      MaskIconRotate	      "none"
+      MaskPortRotate	      "default"
+      MaskIconUnits	      "pixels"
+      MaskValueString	      "[.125090126206834, .0565902847276667, .142797649926544, .101038760757725, .37012096315735"
+      "9, .249920932759681, .245996838252594, .217536963457561, .274588535098202, .125090126206834, 0., .05659028472766"
+      "67, 0., .142797649926544, 0., .101038760757725, 0., .370120963157359, 0., .249920932759681, 0., .245996838252594"
+      ", 0., .217536963457561, 0., .274588535098202, 0., .469255383384679, 0., 1.54307525393538, 0., .149106180027477, "
+      "0., -.211524990023434, 0., .794950682785412, 0., .77125108174557, 0., .100776408721091, 0., -.163249811549842, 0"
+      "., .759643812216724, 0., .785398163397448, 0., .785398163397448, 0., .785398163397448, 0.]"
+      System {
+	Name			"MapleSim_MuscleArm1"
+	Location		[433, 403, 931, 703]
+	Open			off
+	ModelBrowserVisibility	off
+	ModelBrowserWidth	200
+	ScreenColor		"white"
+	PaperOrientation	"landscape"
+	PaperPositionMode	"auto"
+	PaperType		"usletter"
+	PaperUnits		"inches"
+	TiledPaperMargins	[0.500000, 0.500000, 0.500000, 0.500000]
+	TiledPageScale		1
+	ShowPageBoundaries	off
+	ZoomFactor		"100"
+	Block {
+	  BlockType		  Inport
+	  Name			  "inputs[9]"
+	  SID			  5
+	  Position		  [30, 47, 50, 63]
+	  IconDisplay		  "Port number"
+	  OutDataType		  "fixdt(1, 16)"
+	  OutScaling		  "2^0"
+	}
+	Block {
+	  BlockType		  "S-Function"
+	  Name			  "MapleSim_MuscleArm1"
+	  SID			  4
+	  Description		  "Generated by MapleSim"
+	  Ports			  [1, 1]
+	  Position		  [135, 17, 285, 93]
+	  FunctionName		  "cMuscleArm1"
+	  Parameters		  "ic"
+	  EnableBusSupport	  off
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "outputs[3]"
+	  SID			  6
+	  Position		  [370, 47, 390, 63]
+	  IconDisplay		  "Port number"
+	  OutDataType		  "fixdt(1, 16)"
+	  OutScaling		  "2^0"
+	}
+	Line {
+	  SrcBlock		  "inputs[9]"
+	  SrcPort		  1
+	  DstBlock		  "MapleSim_MuscleArm1"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "MapleSim_MuscleArm1"
+	  SrcPort		  1
+	  DstBlock		  "outputs[3]"
+	  DstPort		  1
+	}
+      }
+    }
+  }
+}
